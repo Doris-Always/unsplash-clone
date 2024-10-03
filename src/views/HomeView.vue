@@ -2,10 +2,11 @@
     <div class="page-container">
         
             <HeaderSearch/>
-            <div class="image-div ">
+            <div class="image-div">
                 <ImageDisplay :list="result" />
               
             </div>
+            
            
 
        
@@ -79,7 +80,7 @@ import axios from 'axios';
     display: flex;
   
     align-items: center;
-    left: 10%; 
+    /* left: 10%;  */
 }
 
 .header{
@@ -91,7 +92,15 @@ import axios from 'axios';
         align-items: center;
 
     }
-
-   
+@media only screen and (max-width: 768px){
+    .image-div{
+        left: 0;
+    }
+}
+@media only screen and (min-width: 1280px){
+    .image-div{
+        left: 10%;
+    }
+}
 
 </style>

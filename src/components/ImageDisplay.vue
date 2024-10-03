@@ -1,8 +1,40 @@
 
 <template>
-    <div class="flex justify-center w-full" @close="closeModal">
+  <div class=" w-full small-screen-container">
+    <div class="contain ">
+      <ImageComponent
+            v-for="(item, index) in this.list[1]"
+            :key="index"
+            :url="item.urls.raw"
+            :name="item.user.name"
+            :location="item.user.location"
+            @click="openModal(item)"
+          />
+          <ImageComponent
+            v-for="(item, index) in this.list[0]"
+            :key="index"
+            :url="item.urls.full"
+            :name="item.user.name"
+            :location="item.user.location"
+            
+            @click="openModal(item)"
+          />
+          <ImageComponent
+            v-for="(item, index) in this.list[2]"
+            :key="index"
+            :url="item.urls.raw"
+            :name="item.user.name"
+            :location="item.user.location"
+            @click="openModal(item)"
+          />
+    </div>
+  </div>
+
  
-      <div class="flex gap-x-10">
+    <div class="flex justify-center w-full image-display-container" @close="closeModal">
+    
+ 
+      <div class="flex gap-x-10 ">
     
         <div class="space-y-5 middle-image">
           <ImageComponent
@@ -42,6 +74,7 @@
          
         </div>
       </div>
+    
       <ImageModal
       :show="isModalOpen"
       :url="selectedImage.url"
@@ -49,8 +82,9 @@
       :location="selectedImage.location"
       @close="closeModal"
     />
-     
     </div>
+
+   
    
   </template>
   
@@ -103,6 +137,27 @@ import ImageModal from './ImageModal.vue';
   };
   </script>
   <style scoped>
+  .image-display-container{
+    display: flex;
+  }
+  .small-screen-container{
+    display: none;
+  }
+ 
+  @media only screen and (max-width: 600px){
+    .image-display-container{
+    display: none;
+  }
+  .contain{
+   
+  }
+  .small-screen-container{
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+}
  
   @media only screen and (max-width: 768px){
     
