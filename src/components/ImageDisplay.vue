@@ -75,16 +75,16 @@
         </div>
       </div>
     
-      <ImageModal
+    
+    </div>
+
+    <ImageModal
       :show="isModalOpen"
       :url="selectedImage.url"
       :name="selectedImage.name"
       :location="selectedImage.location"
       @close="closeModal"
     />
-    </div>
-
-   
    
   </template>
   

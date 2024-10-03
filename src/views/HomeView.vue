@@ -80,7 +80,7 @@ import axios from 'axios';
     display: flex;
   
     align-items: center;
-    /* left: 10%;  */
+    left: 0; 
 }
 
 .header{
@@ -99,7 +99,7 @@ import axios from 'axios';
 }
 @media only screen and (min-width: 1280px){
     .image-div{
-        left: 10%;
+        left: 0;
     }
 }
 
